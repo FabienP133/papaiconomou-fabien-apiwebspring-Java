@@ -44,7 +44,7 @@ public class DataRepository {
     }
 
     //réécrit data.json avec l'état courant de `data`.
-    private void saveData() {
+    public void saveData() {
         try {
             mapper
                     .writerWithDefaultPrettyPrinter()

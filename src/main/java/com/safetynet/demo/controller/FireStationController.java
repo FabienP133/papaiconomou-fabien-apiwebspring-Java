@@ -2,11 +2,13 @@ package com.safetynet.demo.controller;
 
 import com.safetynet.demo.model.FireStation;
 import com.safetynet.demo.repository.DataRepository;
+import com.safetynet.demo.service.FireStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.Optional;
 public class FireStationController {
 
     private final DataRepository repository;
+    private FireStationService fireStationService;
 
     @Autowired
     public FireStationController(DataRepository dataRepository) {
@@ -79,6 +82,14 @@ public class FireStationController {
                     .body(Collections.emptyMap());
         }
 
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> delete(
+            @RequestParam String address,
+            @RequestParam int station) {
+        fireStationService.delete(address, station);
+        return ResponseEntity.ok().build();
     }
 
 }
