@@ -1,7 +1,8 @@
-package com.safetynet.demo.service;
+package com.safetynet.demo.service.impl;
 
 import com.safetynet.demo.model.FireStation;
 import com.safetynet.demo.repository.DataRepository;
+import com.safetynet.demo.service.FireStationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -49,9 +50,12 @@ public class FireStationServiceImpl implements FireStationService {
     }
 
     @Override
-    public void delete(String address, int station) {
+    public void delete(String address, Integer station) {
         boolean removed = repository.getFirestations().removeIf(
-                fs -> false
+                fs -> {
+                    return fs.getAddress().equalsIgnoreCase(address) && fs.getStation().equalsIgnoreCase(station.toString());
+                }
+
         );
         if (!removed) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Entrée non trouvée");

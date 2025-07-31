@@ -7,5 +7,5 @@ public interface FireStationService {
     List<FireStation> getAll();
     FireStation create(FireStation fs);
     FireStation update(FireStation fs);
-    void delete(String address, int station);
+    void delete(String address, Integer station);
 }
