@@ -79,9 +79,14 @@ public class DataRepository {
     }
 
 
-    public boolean deleteFirestation(String address, int station) {
-        return data.getFirestations()
-                .removeIf(fs -> false);
+    public boolean deleteFirestation(String address, Integer station) {
+        boolean removed = getFirestations().removeIf(
+                fs -> {
+                    return fs.getAddress().equalsIgnoreCase(address) && fs.getStation().equalsIgnoreCase(station.toString());
+                }
+
+        );
+        return removed;
     }
 
 
@@ -90,17 +95,36 @@ public class DataRepository {
     public List<Person> getPersons() {
         return data.getPersons();
     }
+
     public Person addPerson(Person p) {
         data.getPersons().add(p);
         saveData();
         return p;
     }
+
+
     public Person updatePerson(Person p) {
+        List<Person> list = data.getPersons();
+        for (int i = 0; i < list.size(); i++) {
+            Person existing = list.get(i);
+            if (existing.getFirstName().equalsIgnoreCase(p.getFirstName())
+                    && existing.getLastName().equalsIgnoreCase(p.getLastName())) {
+                list.set(i, p);
+                saveData();
+                return p;
+            }
+        }
         return null;
     }
 
     public boolean deletePerson(String firstName, String lastName) {
-        return false;
+        boolean removed = data.getPersons().removeIf(x ->
+                x.getFirstName().equalsIgnoreCase(firstName)
+                        && x.getLastName().equalsIgnoreCase(lastName));
+        if (removed) {
+            saveData();
+        }
+        return removed;
     }
 
 
@@ -119,11 +143,27 @@ public class DataRepository {
     }
 
     public MedicalRecord updateMedicalRecord(MedicalRecord mr) {
+        List<MedicalRecord> list = data.getMedicalrecords();
+        for (int i = 0; i < list.size(); i++) {
+            MedicalRecord existing = list.get(i);
+            if (existing.getFirstName().equalsIgnoreCase(mr.getFirstName())
+                    && existing.getLastName().equalsIgnoreCase(mr.getLastName())) {
+                list.set(i, mr);
+                saveData();
+                return mr;
+            }
+        }
         return null;
     }
 
     public boolean deleteMedicalRecord(String firstName, String lastName) {
-        return false;
+        boolean removed = data.getMedicalrecords().removeIf(x ->
+                x.getFirstName().equalsIgnoreCase(firstName)
+                        && x.getLastName().equalsIgnoreCase(lastName));
+        if (removed) {
+            saveData();
+        }
+        return removed;
     }
 
 }

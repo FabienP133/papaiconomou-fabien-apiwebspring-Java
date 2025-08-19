@@ -21,7 +21,7 @@ public class AlertsController {
     public List<String> phoneAlert(@RequestParam("firestation") int station) {
         return service.getPhoneAlert(station);
     }
-    
+
     @GetMapping("/communityEmail")
     public List<String> communityEmail(@RequestParam String city) {
         return service.getCommunityEmail(city);

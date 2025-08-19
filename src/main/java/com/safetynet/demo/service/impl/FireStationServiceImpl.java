@@ -37,26 +37,15 @@ public class FireStationServiceImpl implements FireStationService {
 
     @Override
     public FireStation update(FireStation fs) {
-        Optional<FireStation> existing = repository.getFirestations().stream()
-                .filter(e -> e.getAddress().equalsIgnoreCase(fs.getAddress()))
-                .findFirst();
-        if (existing.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Adresse non trouvée");
-        }
-        FireStation toUpdate = existing.get();
-        toUpdate.setStation(fs.getStation());
-        repository.saveData();
-        return toUpdate;
+        FireStation updated = repository.updateFirestation(fs);
+        if (updated == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Adresse non trouvée");
+        return updated;
+
     }
 
     @Override
     public void delete(String address, Integer station) {
-        boolean removed = repository.getFirestations().removeIf(
-                fs -> {
-                    return fs.getAddress().equalsIgnoreCase(address) && fs.getStation().equalsIgnoreCase(station.toString());
-                }
-
-        );
+        boolean removed = repository.deleteFirestation(address, station);
         if (!removed) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Entrée non trouvée");
         }
