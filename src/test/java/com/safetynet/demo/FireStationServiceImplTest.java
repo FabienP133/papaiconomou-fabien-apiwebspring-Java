@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,11 @@ public class FireStationServiceImplTest {
             FireStation updated = service.update(new FireStation("Addr4", "10"));
             assertEquals("10", updated.getStation());
             verify(repository).saveData();
+        }
+
+        @Test
+        public void testMajError() {
+            assertThrows(ResponseStatusException.class, ()-> service.update(new FireStation("Addr5", "11")));
         }
 
         @Test
