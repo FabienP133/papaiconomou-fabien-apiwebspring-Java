@@ -2,6 +2,8 @@ package com.safetynet.demo.controller;
 
 import com.safetynet.demo.model.Person;
 import com.safetynet.demo.service.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/person")
 public class PersonController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PersonController.class);
 
     private final PersonService service;
 
@@ -23,10 +27,6 @@ public class PersonController {
         return ResponseEntity.status(201).body(service.create(p));
     }
 
-    @GetMapping
-    public ResponseEntity<List<Person>> getAll() {
-        return ResponseEntity.ok(service.getAll());
-    }
 
     @PutMapping
     public ResponseEntity<Person> update(@RequestBody Person p) {

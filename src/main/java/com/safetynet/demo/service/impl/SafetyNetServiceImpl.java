@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @Service
@@ -39,6 +40,12 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                 .filter(s -> !s.isBlank()).distinct().collect(Collectors.toList());
     }
 
+    // === helper réutilisé ===
+    private FirePersonDTO toFirePersonDTO(Person p, MedicalRecord mr) {
+        int age = AgeCalculator.calculateAge(mr.getBirthdate());
+        return new FirePersonDTO(p.getFirstName(), p.getLastName(), p.getPhone(), age, mr.getMedications(), mr.getAllergies());
+    }
+
     @Override
     public FireResponseDTO getFire(String address) {
         var stationOpt = repository.getFirestations().stream()
@@ -58,16 +65,12 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                     .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                             && m.getLastName().equalsIgnoreCase(p.getLastName()))
                     .findFirst();
+            if (mrOpt.isEmpty()) continue; //  <-- skip si pas de MR
 
-            int age = mrOpt.map(m -> AgeCalculator.calculateAge(m.getBirthdate())).orElse(-1);
-            var meds = mrOpt.map(MedicalRecord::getMedications).orElse(List.of());
-            var alls = mrOpt.map(MedicalRecord::getAllergies).orElse(List.of());
-
-            persons.add(new FirePersonDTO(
-                    p.getFirstName(), p.getLastName(), p.getPhone(), age, meds, alls
-            ));
+            MedicalRecord mr = mrOpt.get(); // <-- pas de map, plus clair
+            persons.add(toFirePersonDTO(p, mr));
         }
-        return new FireResponseDTO(station, persons);
+        return new FireResponseDTO(stationOpt.get(), persons);
     }
 
 
@@ -75,21 +78,25 @@ public class SafetyNetServiceImpl implements SafetyNetService {
     public List<PersonInfoDTO> getPersonInfo(String lastName) {
         return repository.getPersons().stream()
                 .filter(p -> p.getLastName().equalsIgnoreCase(lastName))
-                .map(p -> {
+                .flatMap (p -> {
                     var mrOpt = repository.getMedicalrecords().stream()
                             .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                                     && m.getLastName().equalsIgnoreCase(p.getLastName()))
                             .findFirst();
-                    int age = mrOpt.map(m -> com.safetynet.demo.util.AgeCalculator.calculateAge(m.getBirthdate()))
-                            .orElse(0);
-                    var meds = mrOpt.map(MedicalRecord::getMedications).orElse(java.util.List.of());
-                    var alls = mrOpt.map(MedicalRecord::getAllergies).orElse(java.util.List.of());
-                    return new PersonInfoDTO(
-                            p.getFirstName(), p.getLastName(), p.getAddress(),
-                            age, p.getEmail(), meds, alls
-                    );
+
+                    if (mrOpt.isEmpty()) {          // <-- garde la personne, mais sans map
+                        return Stream.empty();
+                    } else {
+                        MedicalRecord mr = mrOpt.get();
+                        return Stream.of( new PersonInfoDTO(
+                                        p.getFirstName(), p.getLastName(), p.getAddress(),
+                                AgeCalculator.calculateAge(mr.getBirthdate()), p.getEmail(), mr.getMedications(), mr.getAllergies()
+                                )
+                        );
+                    }
+
                 })
-                .collect(java.util.stream.Collectors.toList());
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -195,14 +202,10 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                         .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                                 && m.getLastName().equalsIgnoreCase(p.getLastName()))
                         .findFirst();
+                if (mrOpt.isEmpty()) continue; //  <-- skip si pas de MR
 
-                int age = mrOpt.map(m -> AgeCalculator.calculateAge(m.getBirthdate())).orElse(-1);
-                var meds = mrOpt.map(MedicalRecord::getMedications).orElse(List.of());
-                var alls = mrOpt.map(MedicalRecord::getAllergies).orElse(List.of());
-
-                persons.add(new FirePersonDTO(
-                        p.getFirstName(), p.getLastName(), p.getPhone(), age, meds, alls
-                ));
+                MedicalRecord mr = mrOpt.get(); // <-- pas de map()
+                persons.add(toFirePersonDTO(p, mr)); // <--  réutilisation du helper
             }
             households.add(new FloodHouseholdDTO(addr, persons));
         }

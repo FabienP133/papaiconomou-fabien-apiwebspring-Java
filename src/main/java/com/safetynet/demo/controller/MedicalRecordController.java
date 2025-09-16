@@ -2,6 +2,8 @@ package com.safetynet.demo.controller;
 
 import com.safetynet.demo.model.MedicalRecord;
 import com.safetynet.demo.service.MedicalRecordService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/medicalRecord")
 public class MedicalRecordController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MedicalRecordController.class);
 
     private final MedicalRecordService service;
 
@@ -22,10 +26,6 @@ public class MedicalRecordController {
         return ResponseEntity.status(201).body(service.create(mr));
     }
 
-    @GetMapping
-    public ResponseEntity<List<MedicalRecord>> getAll() {
-        return ResponseEntity.ok(service.getAll());
-    }
 
 
     @PutMapping

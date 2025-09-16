@@ -2,17 +2,19 @@ package com.safetynet.demo.controller;
 
 import com.safetynet.demo.dto.*;
 import com.safetynet.demo.service.SafetyNetService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class AlertsController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlertsController.class);
 
     private final SafetyNetService service;
 
@@ -23,6 +25,7 @@ public class AlertsController {
 
     @GetMapping("/phoneAlert")
     public List<String> phoneAlert(@RequestParam("firestation") int station) {
+        LOGGER.info("phoneAlert appelé " + station);
         return service.getPhoneAlert(station);
     }
 
@@ -33,14 +36,14 @@ public class AlertsController {
 
 
     @GetMapping("/personInfo")
-    public List<PersonInfoDTO> personInfo(@RequestParam String lastName) {
+    public List<PersonInfoDTO> personInfoLastName(@RequestParam String lastName) {
         return service.getPersonInfo(lastName);
     }
 
     @GetMapping(value = "/firestation", params = "stationNumber")
-    public ResponseEntity<?> stationCoverage(@RequestParam int stationNumber) {
+    public ResponseEntity<StationCoverageDTO> stationCoverage(@RequestParam int stationNumber) {
         StationCoverageDTO dto = service.getStationCoverage(stationNumber);
-        return (dto == null) ? ResponseEntity.ok(Collections.emptyMap()) : ResponseEntity.ok(dto);
+        return (dto == null) ? ResponseEntity.notFound().build() : ResponseEntity.ok(dto);
     }
 
 
@@ -51,9 +54,9 @@ public class AlertsController {
     }
 
     @GetMapping("/fire")
-    public ResponseEntity<?> fire(@RequestParam String address) {
+    public ResponseEntity<FireResponseDTO> fire(@RequestParam String address) {
         FireResponseDTO dto = service.getFire(address);
-        return (dto == null) ? ResponseEntity.ok(Collections.emptyMap()) : ResponseEntity.ok(dto);
+        return (dto == null) ? ResponseEntity.notFound().build() : ResponseEntity.ok(dto);
     }
 
     @GetMapping("/flood/stations")

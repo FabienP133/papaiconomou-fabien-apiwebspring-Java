@@ -3,11 +3,13 @@ package com.safetynet.demo.controller;
 import com.safetynet.demo.model.FireStation;
 import com.safetynet.demo.repository.DataRepository;
 import com.safetynet.demo.service.FireStationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
+
 
 
 import java.util.Collections;
@@ -19,6 +21,9 @@ import java.util.Optional;
 public class FireStationController {
 
     private final DataRepository repository;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(FireStationController.class);
+
     private FireStationService fireStationService;
 
     @Autowired
@@ -50,14 +55,6 @@ public class FireStationController {
                 .body(newFs);
     }
 
-    //récup toutes les adresses des firestations
-    @GetMapping
-    public ResponseEntity<List<FireStation>> getFirestations() {
-        List<FireStation> stations = repository.getFirestations();
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(stations);
-    }
 
      //PUT
 
