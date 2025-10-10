@@ -14,8 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
 
 public class FireStationServiceImplTest {
 
@@ -54,10 +55,9 @@ public class FireStationServiceImplTest {
         @Test
         public void testMajSuccess() {
             FireStation fs = new FireStation("Addr4", "4");
-            stationList.add(fs);
-            FireStation updated = service.update(new FireStation("Addr4", "10"));
-            assertEquals("10", updated.getStation());
-            verify(repository).saveData();
+            when(repository.updateFirestation(any())).thenReturn(fs);
+            FireStation updated = service.update(new FireStation("Addr4", "4"));
+            assertEquals("4", updated.getStation());
         }
 
         @Test
@@ -68,10 +68,12 @@ public class FireStationServiceImplTest {
         @Test
             public void testDelete_Success() {
             FireStation fs = new FireStation("Addr5", "5");
-            stationList.add(fs);
+            when(repository.deleteFirestation(eq("Addr5"), eq(5))).thenReturn(true);
+            doNothing().when(repository).saveData();
             service.delete("Addr5", 5);
-            assertTrue(stationList.isEmpty());
+            verify(repository).deleteFirestation(eq("Addr5"), eq(5));
             verify(repository).saveData();
+            verifyNoMoreInteractions(repository);
         }
 
 

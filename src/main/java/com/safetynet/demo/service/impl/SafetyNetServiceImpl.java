@@ -24,7 +24,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
         this.repository = repository;
     }
 
-    //implémentations
+
 
     @Override
     public List<String> getPhoneAlert(int stationNumber) {
@@ -40,7 +40,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                 .filter(s -> !s.isBlank()).distinct().collect(Collectors.toList());
     }
 
-    // === helper réutilisé ===
+    // helper réutilisé
     private FirePersonDTO toFirePersonDTO(Person p, MedicalRecord mr) {
         int age = AgeCalculator.calculateAge(mr.getBirthdate());
         return new FirePersonDTO(p.getFirstName(), p.getLastName(), p.getPhone(), age, mr.getMedications(), mr.getAllergies());

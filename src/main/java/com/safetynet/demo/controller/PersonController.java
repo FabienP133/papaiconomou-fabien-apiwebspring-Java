@@ -24,12 +24,14 @@ public class PersonController {
 
     @PostMapping
     public ResponseEntity<Person> create(@RequestBody Person p) {
+        LOGGER.info("create appelé " + p);
         return ResponseEntity.status(201).body(service.create(p));
     }
 
 
     @PutMapping
     public ResponseEntity<Person> update(@RequestBody Person p) {
+        LOGGER.info("update appelé " + p);
         return ResponseEntity.ok(service.update(p));
     }
 
@@ -37,6 +39,7 @@ public class PersonController {
     public ResponseEntity<Void> delete(
             @RequestParam String firstName,
             @RequestParam String lastName) {
+        LOGGER.info("delete " + firstName, lastName);
         service.delete(firstName, lastName);
         return ResponseEntity.ok().build();
     }

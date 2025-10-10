@@ -35,6 +35,7 @@ public class FireStationController {
 
     @PostMapping
     public ResponseEntity<FireStation> createFireStation(@RequestBody FireStation newFs) {
+        LOGGER.info("createFireStation appelé " + newFs);
         // Récupère la liste en mémoire
         List<FireStation> stations = repository.getFirestations();
 
@@ -60,6 +61,7 @@ public class FireStationController {
 
     @PutMapping
     public ResponseEntity<?> updateFireStation(@RequestBody FireStation updatedFs) {
+        LOGGER.info("updateFireStation appelé " + updatedFs);
         List<FireStation> stations = repository.getFirestations();
 
         // Je cherche la caserne par adresse
@@ -85,6 +87,7 @@ public class FireStationController {
     public ResponseEntity<Void> delete(
             @RequestParam String address,
             @RequestParam int station) {
+        LOGGER.info("delete " + address, station);
         fireStationService.delete(address, station);
         return ResponseEntity.ok().build();
     }

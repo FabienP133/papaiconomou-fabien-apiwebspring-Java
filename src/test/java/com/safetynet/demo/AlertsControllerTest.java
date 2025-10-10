@@ -71,11 +71,10 @@ class AlertsControllerTest {
     }
 
     @Test
-    void fire_unknownAddress_returnsEmptyObject() throws Exception {
+    void fire_unknownAddress_returns404() throws Exception {
         when(service.getFire("Unknown")).thenReturn(null);
         mockMvc.perform(get("/fire").param("address", "Unknown"))
-                .andExpect(status().isOk())
-                .andExpect(content().json("{}"));
+                .andExpect(status().isNotFound());
     }
 
     // ---- /flood/stations ----

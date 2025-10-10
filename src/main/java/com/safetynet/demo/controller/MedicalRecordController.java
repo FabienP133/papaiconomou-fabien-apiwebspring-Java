@@ -23,6 +23,7 @@ public class MedicalRecordController {
 
     @PostMapping
     public ResponseEntity<MedicalRecord> create(@RequestBody MedicalRecord mr) {
+        LOGGER.info("create appelé " + mr);
         return ResponseEntity.status(201).body(service.create(mr));
     }
 
@@ -30,6 +31,7 @@ public class MedicalRecordController {
 
     @PutMapping
     public ResponseEntity<MedicalRecord> update(@RequestBody MedicalRecord mr) {
+        LOGGER.info("update appelé " + mr);
         return ResponseEntity.ok(service.update(mr));
     }
 
@@ -37,6 +39,7 @@ public class MedicalRecordController {
     public ResponseEntity<Void> delete(
             @RequestParam String firstName,
             @RequestParam String lastName) {
+        LOGGER.info("delete " + firstName, lastName);
         service.delete(firstName, lastName);
         return ResponseEntity.ok().build();
     }
