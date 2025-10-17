@@ -95,4 +95,65 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$.households[0].address", anyOf(is("A1"), is("A2"))))
                 .andExpect(jsonPath("$.households[0].persons[0].firstName", anyOf(is("P1"), is("P2"))));
     }
+
+    // -------- stationCoverage --------
+    @Test
+    void stationCoverage_200() throws Exception {
+        var persons = List.of(
+                new StationCoveragePersonDTO("John","Boyd","1509 Culver St","111-111"),
+                new StationCoveragePersonDTO("Jacob","Boyd","1509 Culver St","222-222")
+        );
+        var dto = new StationCoverageDTO(persons, /*children*/1, /*adults*/1);
+        when(service.getStationCoverage(3)).thenReturn(dto);
+
+        mockMvc.perform(get("/firestation").param("stationNumber", "3"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.children").value(1))
+                .andExpect(jsonPath("$.adults").value(1))
+                .andExpect(jsonPath("$.persons[0].firstName").value("John"))
+                .andExpect(jsonPath("$.persons[0].phone").value("111-111"));
+    }
+
+    // -------- phoneAlert --------
+    @Test
+    void phoneAlert_200() throws Exception {
+        when(service.getPhoneAlert(1))
+                .thenReturn(java.util.List.of("111-111", "222-222"));
+
+        mockMvc.perform(get("/phoneAlert").param("firestation", "1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0]").value("111-111"));
+    }
+
+    // -------- communityEmail --------
+    @Test
+    void communityEmail_200() throws Exception {
+        when(service.getCommunityEmail("Culver"))
+                .thenReturn(java.util.List.of("a@x.com", "b@x.com"));
+
+        mockMvc.perform(get("/communityEmail").param("city", "Culver"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0]").value("a@x.com"));
+    }
+
+    // -------- personInfoLastName --------
+    @Test
+    void personInfoLastName_200() throws Exception {
+        var list = List.of(
+                new PersonInfoDTO("John", "Boyd", "1509 Culver St", 40, "john@x",
+                        List.of("aznol:200mg"), List.of("nillacilan"))
+        );
+        when(service.getPersonInfo("Boyd")).thenReturn(List.of(
+                new PersonInfoDTO("John", "Boyd", "1509 Culver St", 40, "john@x",
+                        List.of("aznol:200mg"), List.of("nillacilan"))
+        ));
+
+        mockMvc.perform(get("/personInfo")                 // ← au lieu de /personInfoLastName
+                        .param("lastName", "Boyd"))               // ← param s’appelle bien lastName
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].firstName").value("John"))
+                .andExpect(jsonPath("$[0].age").value(40))
+                .andExpect(jsonPath("$[0].medications[0]").value("aznol:200mg"));
+    }
+
 }

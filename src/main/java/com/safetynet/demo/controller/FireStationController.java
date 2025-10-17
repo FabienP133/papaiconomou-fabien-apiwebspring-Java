@@ -20,15 +20,13 @@ import java.util.Optional;
 @RequestMapping("/firestation")
 public class FireStationController {
 
-    private final DataRepository repository;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FireStationController.class);
 
     private FireStationService fireStationService;
 
-    @Autowired
-    public FireStationController(DataRepository dataRepository) {
-        this.repository = dataRepository;
+    public FireStationController(FireStationService fireStationService) {
+        this.fireStationService = fireStationService;
     }
 
     //POST
@@ -36,24 +34,13 @@ public class FireStationController {
     @PostMapping
     public ResponseEntity<FireStation> createFireStation(@RequestBody FireStation newFs) {
         LOGGER.info("createFireStation appelé " + newFs);
-        // Récupère la liste en mémoire
-        List<FireStation> stations = repository.getFirestations();
-
-        // Vérifie si l'adresse existe déjà
-        boolean exists = stations.stream()
-                .anyMatch(fs -> fs.getAddress().equalsIgnoreCase(newFs.getAddress()));
-        if (exists) {
-            // S'il y a un doublon, on renvoie un json vide + 409 Conflict
-            return ResponseEntity
-                    .status(HttpStatus.CONFLICT)
-                    .body(null);
+        try {
+            FireStation created = fireStationService.create(newFs);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (com.safetynet.demo.exception.ConflictException e) {
+            LOGGER.error("Create firestation conflict: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
-
-        // Sinon on ajoute et on renvoie 201 Created
-        stations.add(newFs);
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(newFs);
     }
 
 
@@ -62,34 +49,26 @@ public class FireStationController {
     @PutMapping
     public ResponseEntity<?> updateFireStation(@RequestBody FireStation updatedFs) {
         LOGGER.info("updateFireStation appelé " + updatedFs);
-        List<FireStation> stations = repository.getFirestations();
-
-        // Je cherche la caserne par adresse
-        Optional<FireStation> existingOpt = stations.stream()
-                .filter(fs -> fs.getAddress().equalsIgnoreCase(updatedFs.getAddress()))
-                .findFirst();
-
-        if (existingOpt.isPresent()) {
-            // Maj du numéro de station
-            FireStation existing = existingOpt.get();
-            existing.setStation(updatedFs.getStation());
-            return ResponseEntity.ok(existing);
-        } else {
-            // adresse non trouvée : on renvoie un json vide avec l'erreur 404 Not Found
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Collections.emptyMap());
+        try {
+            FireStation updated = fireStationService.update(updatedFs);
+            return ResponseEntity.ok(updated);
+        } catch (com.safetynet.demo.exception.NotFoundException e) {
+            LOGGER.error("Update firestation not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
     }
 
     @DeleteMapping
     public ResponseEntity<Void> delete(
             @RequestParam String address,
             @RequestParam int station) {
-        LOGGER.info("delete " + address, station);
-        fireStationService.delete(address, station);
-        return ResponseEntity.ok().build();
+        LOGGER.info("DELETE /firestation addr={} station={}", address, station);
+        try {
+            fireStationService.delete(address, station);
+            return ResponseEntity.noContent().build();
+        } catch (com.safetynet.demo.exception.NotFoundException e) {
+            LOGGER.error("Delete firestation not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
-
 }

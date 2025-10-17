@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +51,38 @@ public class PersonServiceImplTest {
     }
 
     @Test
+    void create_duplicate_ignoreCase_conflict() {
+        Person existing = new Person();
+        existing.setFirstName("JOHN");
+        existing.setLastName("DOE");
+        when(repository.getPersons()).thenReturn(java.util.List.of(existing));
+
+        Person input = new Person();
+        input.setFirstName("john");
+        input.setLastName("doe");
+
+        assertThrows(com.safetynet.demo.exception.ConflictException.class,
+                () -> service.create(input));
+
+        verify(repository).getPersons();
+        verify(repository, never()).addPerson(any());
+    }
+
+    @Test
     public void testDeletePerson() {
         when(repository.deletePerson("Tom", "Tailor")).thenReturn(true);
         assertDoesNotThrow(() -> service.delete("Tom", "Tailor"));
         verify(repository).deletePerson("Tom", "Tailor");
+    }
+
+    @Test
+    void delete_notFound_throwsNotFoundException() {
+        when(repository.deletePerson(eq("Ghost"), eq("User"))).thenReturn(false);
+
+        assertThrows(com.safetynet.demo.exception.NotFoundException.class,
+                () -> service.delete("Ghost", "User"));
+
+        verify(repository).deletePerson("Ghost", "User");
     }
 
     @Test
@@ -81,11 +108,10 @@ public class PersonServiceImplTest {
         Person ghost = new Person();
         ghost.setFirstName("Ghost");
         ghost.setLastName("User");
-
-        var ex = assertThrows(org.springframework.web.server.ResponseStatusException.class,
-                () -> service.update(ghost));
-        assertEquals(org.springframework.http.HttpStatus.NOT_FOUND, ex.getStatusCode());
+        assertThrows(
+                com.safetynet.demo.exception.NotFoundException.class,
+                () -> service.update(ghost)
+        );
     }
-
 
 }

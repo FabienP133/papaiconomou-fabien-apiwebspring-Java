@@ -27,28 +27,30 @@ public class FireStationServiceImpl implements FireStationService {
     @Override
     public FireStation create(FireStation fs) {
         boolean exists = repository.getFirestations().stream()
-                .anyMatch(e -> e.getAddress().equalsIgnoreCase(fs.getAddress()));
+                .anyMatch(x -> x.getAddress().equalsIgnoreCase(fs.getAddress()));
         if (exists) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Adresse déjà existante");
+            throw new com.safetynet.demo.exception.ConflictException(
+                    "FireStation existe déjà: " + fs.getAddress());
         }
-        repository.addFirestation(fs);
-        return fs;
+        return repository.addFirestation(fs);
     }
 
     @Override
     public FireStation update(FireStation fs) {
-        FireStation updated = repository.updateFirestation(fs);
-        if (updated == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Adresse non trouvée");
+        FireStation updated = repository.updateFirestation(fs); // null si inconnue
+        if (updated == null) {
+            throw new com.safetynet.demo.exception.NotFoundException(
+                    "FireStation not found à l'adresse: " + fs.getAddress());
+        }
         return updated;
-
     }
 
     @Override
-    public void delete(String address, Integer station) {
-        boolean removed = repository.deleteFirestation(address, station);
-        if (!removed) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Entrée non trouvée");
+    public void delete(String address, int stationNumber) {
+        boolean ok = repository.deleteFirestation(address, stationNumber);
+        if (!ok) {
+            throw new com.safetynet.demo.exception.NotFoundException(
+                    "FireStation mapping not found: %s (station %d)".formatted(address, stationNumber));
         }
-        repository.saveData();
     }
 }

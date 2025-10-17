@@ -61,7 +61,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
 
         List<FirePersonDTO> persons = new ArrayList<>();
         for (Person p : people) {
-            var mrOpt = repository.getMedicalrecords().stream()
+            var mrOpt = repository.getMedicalRecords().stream()
                     .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                             && m.getLastName().equalsIgnoreCase(p.getLastName()))
                     .findFirst();
@@ -79,7 +79,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
         return repository.getPersons().stream()
                 .filter(p -> p.getLastName().equalsIgnoreCase(lastName))
                 .flatMap (p -> {
-                    var mrOpt = repository.getMedicalrecords().stream()
+                    var mrOpt = repository.getMedicalRecords().stream()
                             .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                                     && m.getLastName().equalsIgnoreCase(p.getLastName()))
                             .findFirst();
@@ -140,7 +140,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
             ));
 
             // âge si dossier dispo ; enfant < 18, adulte >= 18 ; inconnu = non compté
-            var mrOpt = repository.getMedicalrecords().stream()
+            var mrOpt = repository.getMedicalRecords().stream()
                     .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                             && m.getLastName().equalsIgnoreCase(p.getLastName()))
                     .findFirst();
@@ -162,7 +162,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
 
         List<ChildAlertChildDTO> out = new ArrayList<>();
         for (Person p : household) {
-            var mrOpt = repository.getMedicalrecords().stream()
+            var mrOpt = repository.getMedicalRecords().stream()
                     .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                             && m.getLastName().equalsIgnoreCase(p.getLastName()))
                     .findFirst();
@@ -198,14 +198,14 @@ public class SafetyNetServiceImpl implements SafetyNetService {
 
             List<FirePersonDTO> persons = new ArrayList<>();
             for (Person p : occupants) {
-                var mrOpt = repository.getMedicalrecords().stream()
+                var mrOpt = repository.getMedicalRecords().stream()
                         .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                                 && m.getLastName().equalsIgnoreCase(p.getLastName()))
                         .findFirst();
-                if (mrOpt.isEmpty()) continue; //  <-- skip si pas de MR
+                if (mrOpt.isEmpty()) continue; //   skip si pas de MR
 
-                MedicalRecord mr = mrOpt.get(); // <-- pas de map()
-                persons.add(toFirePersonDTO(p, mr)); // <--  réutilisation du helper
+                MedicalRecord mr = mrOpt.get(); //  pas de map()
+                persons.add(toFirePersonDTO(p, mr)); //   réutilisation du helper
             }
             households.add(new FloodHouseholdDTO(addr, persons));
         }

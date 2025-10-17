@@ -20,29 +20,39 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 
     @Override
     public List<MedicalRecord> getAll() {
-        return repository.getMedicalrecords();
+        return repository.getMedicalRecords();
     }
 
     @Override
     public MedicalRecord create(MedicalRecord mr) {
-        boolean exists = repository.getMedicalrecords().stream().anyMatch(
+        boolean exists = repository.getMedicalRecords().stream().anyMatch(
                 x -> x.getFirstName().equalsIgnoreCase(mr.getFirstName())
                         && x.getLastName().equalsIgnoreCase(mr.getLastName())
         );
-        if (exists) throw new ResponseStatusException(HttpStatus.CONFLICT);
+        if (exists) {
+            throw new com.safetynet.demo.exception.ConflictException(
+                    "Le médical record existe déjà pour %s %s"
+                            .formatted(mr.getFirstName(), mr.getLastName()));
+        }
         return repository.addMedicalRecord(mr);
     }
 
     @Override
     public MedicalRecord update(MedicalRecord mr) {
         MedicalRecord updated = repository.updateMedicalRecord(mr);
-        if (updated == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        if (updated == null) throw new com.safetynet.demo.exception.NotFoundException(
+                "Medical record introuvable pour %s %s".formatted(mr.getFirstName(), mr.getLastName())
+        );
         return updated;
     }
 
     @Override
     public void delete(String firstName, String lastName) {
         boolean ok = repository.deleteMedicalRecord(firstName, lastName);
-        if (!ok) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        if (!ok) {
+            throw new com.safetynet.demo.exception.NotFoundException(
+                    "Medical record introuvé pour %s %s".formatted(firstName, lastName)
+            );
+        }
     }
 }

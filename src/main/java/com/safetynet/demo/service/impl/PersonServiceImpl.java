@@ -25,24 +25,33 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person create(Person p) {
-        boolean exists = repository.getPersons().stream().anyMatch(
-                x -> x.getFirstName().equalsIgnoreCase(p.getFirstName())
+        boolean exists = repository.getPersons().stream().anyMatch(x ->
+                x.getFirstName().equalsIgnoreCase(p.getFirstName())
                         && x.getLastName().equalsIgnoreCase(p.getLastName())
         );
-        if (exists) throw new ResponseStatusException(HttpStatus.CONFLICT);
+        if (exists) {
+            throw new com.safetynet.demo.exception.ConflictException(
+                    "La personne existe déjà : %s %s".formatted(p.getFirstName(), p.getLastName()));
+        }
         return repository.addPerson(p);
     }
 
     @Override
     public Person update(Person p) {
-        Person updated = repository.updatePerson(p);
-        if (updated == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        Person updated = repository.updatePerson(p); // peut renvoyer null si introuvable
+        if (updated == null) {
+            throw new com.safetynet.demo.exception.NotFoundException(
+                    "Peronne pas trouvée : %s %s".formatted(p.getFirstName(), p.getLastName()));
+        }
         return updated;
     }
 
     @Override
     public void delete(String firstName, String lastName) {
         boolean ok = repository.deletePerson(firstName, lastName);
-        if (!ok) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        if (!ok) {
+            throw new com.safetynet.demo.exception.NotFoundException(
+                    "La personne n'existe pas : %s %s".formatted(firstName, lastName));
+        }
     }
 }

@@ -156,7 +156,7 @@ public class SafetyNetServiceImplTest {
         mrAdult.setLastName("Doe");
         mrAdult.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 40));
 
-        when(repo.getMedicalrecords()).thenReturn(List.of(mrChild, mrAdult));
+        when(repo.getMedicalRecords()).thenReturn(List.of(mrChild, mrAdult));
 
         SafetyNetService service = new SafetyNetServiceImpl(repo);
 
@@ -187,7 +187,7 @@ public class SafetyNetServiceImplTest {
 
         when(repo.getPersons()).thenReturn(List.of(p));
         // Aucun medical record pour cette personne
-        when(repo.getMedicalrecords()).thenReturn(List.of());
+        when(repo.getMedicalRecords()).thenReturn(List.of());
 
         SafetyNetService service = new SafetyNetServiceImpl(repo);
 
@@ -231,7 +231,7 @@ public class SafetyNetServiceImplTest {
         mr.setLastName("Now");
         mr.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 18));
 
-        when(repo.getMedicalrecords()).thenReturn(List.of(mr));
+        when(repo.getMedicalRecords()).thenReturn(List.of(mr));
 
         SafetyNetService service = new SafetyNetServiceImpl(repo);
 
@@ -265,7 +265,7 @@ public class SafetyNetServiceImplTest {
         mr.setFirstName("Only");
         mr.setLastName("Four");
         mr.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 30));
-        when(repo.getMedicalrecords()).thenReturn(List.of(mr));
+        when(repo.getMedicalRecords()).thenReturn(List.of(mr));
 
         SafetyNetService service = new SafetyNetServiceImpl(repo);
 
@@ -303,7 +303,7 @@ public class SafetyNetServiceImplTest {
         mr1.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 41)); mr1.setMedications(List.of("aznol:200mg")); mr1.setAllergies(List.of("nillacilan"));
         MedicalRecord mr2 = new MedicalRecord(); mr2.setFirstName("Jacob"); mr2.setLastName("Boyd");
         mr2.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 32)); mr2.setMedications(List.of()); mr2.setAllergies(List.of());
-        when(repository.getMedicalrecords()).thenReturn(List.of(mr1, mr2));
+        when(repository.getMedicalRecords()).thenReturn(List.of(mr1, mr2));
 
         FireResponseDTO out = service.getFire("1509 Culver St");
 
@@ -328,7 +328,7 @@ public class SafetyNetServiceImplTest {
 
         MedicalRecord m1 = new MedicalRecord(); m1.setFirstName("Ten");   m1.setLastName("Doe"); m1.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 10));
         MedicalRecord m2 = new MedicalRecord(); m2.setFirstName("Forty"); m2.setLastName("Doe"); m2.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 40));
-        when(repository.getMedicalrecords()).thenReturn(List.of(m1, m2));
+        when(repository.getMedicalRecords()).thenReturn(List.of(m1, m2));
 
         List<PersonInfoDTO> out = service.getPersonInfo("doe");
 
@@ -345,7 +345,7 @@ public class SafetyNetServiceImplTest {
 
         MedicalRecord mk = new MedicalRecord(); mk.setFirstName("Kid");  mk.setLastName("Smith");  mk.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 10));
         MedicalRecord mm = new MedicalRecord(); mm.setFirstName("Anna"); mm.setLastName("Smith");  mm.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 35));
-        when(repository.getMedicalrecords()).thenReturn(List.of(mk, mm));
+        when(repository.getMedicalRecords()).thenReturn(List.of(mk, mm));
 
         List<ChildAlertChildDTO> out = service.getChildAlert("A1");
 
@@ -362,7 +362,7 @@ public class SafetyNetServiceImplTest {
 
         MedicalRecord mra = new MedicalRecord(); mra.setFirstName("A"); mra.setLastName("X"); mra.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 30));
         MedicalRecord mrb = new MedicalRecord(); mrb.setFirstName("B"); mrb.setLastName("X"); mrb.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 25));
-        when(repository.getMedicalrecords()).thenReturn(List.of(mra, mrb));
+        when(repository.getMedicalRecords()).thenReturn(List.of(mra, mrb));
 
         assertTrue(service.getChildAlert("A2").isEmpty());
     }
@@ -379,7 +379,7 @@ public class SafetyNetServiceImplTest {
 
         MedicalRecord m1 = new MedicalRecord(); m1.setFirstName("P1"); m1.setLastName("L1"); m1.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 20));
         MedicalRecord m2 = new MedicalRecord(); m2.setFirstName("P2"); m2.setLastName("L2"); m2.setBirthdate(mmddyyyy(LocalDate.now().getYear() - 10));
-        when(repository.getMedicalrecords()).thenReturn(List.of(m1, m2));
+        when(repository.getMedicalRecords()).thenReturn(List.of(m1, m2));
 
         FloodStationsDTO out = service.getFloodStations(List.of(1));
 

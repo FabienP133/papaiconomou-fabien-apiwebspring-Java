@@ -30,7 +30,7 @@ public class MedicalRecordServiceImplTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         recordList = new ArrayList<>();
-        when(repository.getMedicalrecords()).thenReturn(recordList);
+        when(repository.getMedicalRecords()).thenReturn(recordList);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class MedicalRecordServiceImplTest {
         recordList.add(new MedicalRecord("John", "Doe", "01/01/2000", List.of("med1"), List.of("all1")));
         List<MedicalRecord> result = service.getAll();
         assertEquals(1, result.size());
-        verify(repository).getMedicalrecords();
+        verify(repository).getMedicalRecords();
     }
 
     @Test
@@ -61,7 +61,7 @@ public class MedicalRecordServiceImplTest {
     void update_success() {
         MedicalRecord in  = new MedicalRecord("Jane","Doe","02/02/1990", List.of("med:2"), List.of());
         MedicalRecord out = new MedicalRecord("Jane","Doe","02/02/1990", List.of("med:2"), List.of());
-        when(repository.getMedicalrecords()).thenReturn(List.of(in));
+        when(repository.getMedicalRecords()).thenReturn(List.of(in));
         when(repository.updateMedicalRecord(in)).thenReturn(out);
 
         MedicalRecord res = service.update(in);
@@ -74,20 +74,19 @@ public class MedicalRecordServiceImplTest {
     @Test
     void create_duplicate_ignoreCase_conflict() {
         var existing = new MedicalRecord("JANE","DOE","02/02/1990", List.of(), List.of());
-        when(repository.getMedicalrecords()).thenReturn(List.of(existing));
+        when(repository.getMedicalRecords()).thenReturn(List.of(existing));
 
         var input = new MedicalRecord("jane","doe","02/02/1990", List.of(), List.of());
 
-        var ex = assertThrows(org.springframework.web.server.ResponseStatusException.class,
+        assertThrows(com.safetynet.demo.exception.ConflictException.class,
                 () -> service.create(input));
 
-        assertEquals(org.springframework.http.HttpStatus.CONFLICT, ex.getStatusCode());
         verify(repository, never()).addMedicalRecord(any());
     }
 
     @Test
     void create_new_ok() {
-        when(repository.getMedicalrecords()).thenReturn(List.of());
+        when(repository.getMedicalRecords()).thenReturn(List.of());
         var input = new MedicalRecord("Alice","Wonder","01/01/2000", List.of("aspirin:100mg"), List.of());
         when(repository.addMedicalRecord(any())).thenAnswer(inv -> inv.getArgument(0));
 

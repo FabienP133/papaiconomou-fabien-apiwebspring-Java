@@ -132,7 +132,7 @@ public class DataRepository {
     //Medical Record
 
 
-    public List<MedicalRecord> getMedicalrecords() {
+    public List<MedicalRecord> getMedicalRecords() {
         return data.getMedicalrecords();
     }
 

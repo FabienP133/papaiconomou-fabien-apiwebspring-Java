@@ -1,5 +1,7 @@
 package com.safetynet.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.safetynet.demo.model.DataWrapper;
 import com.safetynet.demo.model.FireStation;
 import com.safetynet.demo.model.MedicalRecord;
@@ -10,9 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class DataRepositoryTest {
 
@@ -27,7 +33,7 @@ public class DataRepositoryTest {
         ReflectionTestUtils.setField(repo, "data", new DataWrapper());
 
         //  Pas d’Input/Output disque pendant les tests
-        Mockito.doNothing().when(repo).saveData();
+        doNothing().when(repo).saveData();
     }
 
     @Test
@@ -80,7 +86,7 @@ public class DataRepositoryTest {
         MedicalRecord mr = new MedicalRecord("Bob","Lee","02/02/1990", List.of("m"), List.of());
         MedicalRecord added = repo.addMedicalRecord(mr);
         assertNotNull(added);
-        assertTrue(repo.getMedicalrecords().stream()
+        assertTrue(repo.getMedicalRecords().stream()
                 .anyMatch(x -> "Bob".equals(x.getFirstName()) && "Lee".equals(x.getLastName())));
 
         // UPDATE (retourne MedicalRecord)
@@ -92,8 +98,56 @@ public class DataRepositoryTest {
         // DELETE (retourne boolean)
         boolean deleted = repo.deleteMedicalRecord("Bob", "Lee");
         assertTrue(deleted);
-        assertFalse(repo.getMedicalrecords().stream()
+        assertFalse(repo.getMedicalRecords().stream()
                 .anyMatch(x -> "Bob".equals(x.getFirstName()) && "Lee".equals(x.getLastName())));
+    }
+
+    @Test
+    void saveData_writesPrettyJson_success() throws Exception {
+        DataRepository repo = new DataRepository();
+
+        // fichier temporaire (sans @TempDir)
+        Path out = Files.createTempFile("datarepo-", ".json");
+        out.toFile().deleteOnExit();
+
+        // data non vide
+        DataWrapper data = new DataWrapper();
+        Person p = new Person();
+        p.setFirstName("Unit");
+        p.setLastName("Test");
+        data.getPersons().add(p);
+
+        // injecte les dépendances internes
+        ReflectionTestUtils.setField(repo, "jsonPath", out);
+        ReflectionTestUtils.setField(repo, "mapper", new ObjectMapper());
+        ReflectionTestUtils.setField(repo, "data", data);
+
+        // act
+        repo.saveData();
+
+        // assert
+        String content = Files.readString(out);
+        assertTrue(content.contains("\"persons\""));
+        assertTrue(content.contains("\"Unit\""));
+        assertTrue(content.contains("\"Test\""));
+        assertTrue(content.startsWith("{"));
+    }
+
+    @Test
+    void saveData_throwsRuntime_whenTargetIsDirectory() throws Exception {
+        DataRepository repo = new DataRepository();
+
+        // répertoire temporaire (pas de @TempDir)
+        Path dir = Files.createTempDirectory("datarepo-dir-");
+        dir.toFile().deleteOnExit();
+
+        // dépendances internes
+        ReflectionTestUtils.setField(repo, "jsonPath", dir);             // <-- un dossier, pas un fichier
+        ReflectionTestUtils.setField(repo, "mapper", new ObjectMapper());
+        ReflectionTestUtils.setField(repo, "data", new DataWrapper());
+
+        RuntimeException ex = assertThrows(RuntimeException.class, repo::saveData);
+        assertNotNull(ex.getCause()); // IOException attendue en cause
     }
 
 }

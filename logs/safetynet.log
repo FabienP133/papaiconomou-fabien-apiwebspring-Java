@@ -1,0 +1,285 @@
+2025-10-17T12:52:05.818+02:00  INFO 20564 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 20564 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T12:52:05.824+02:00  INFO 20564 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T12:52:06.990+02:00  INFO 20564 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T12:52:06.990+02:00  INFO 20564 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T12:52:06.991+02:00  INFO 20564 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T12:52:07.014+02:00  INFO 20564 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.575 seconds (process running for 2.405)
+2025-10-17T12:52:07.098+02:00  INFO 20564 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T12:52:07.204+02:00  INFO 20564 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T12:52:07.212+02:00  INFO 20564 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T12:52:07.219+02:00  INFO 20564 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T12:52:07.228+02:00  INFO 20564 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T12:52:47.690+02:00  INFO 21004 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 21004 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T12:52:47.692+02:00  INFO 21004 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T12:52:48.886+02:00  INFO 21004 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T12:52:48.887+02:00  INFO 21004 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T12:52:48.888+02:00  INFO 21004 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T12:52:48.914+02:00  INFO 21004 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 1.524 seconds (process running for 2.294)
+2025-10-17T12:52:49.043+02:00  INFO 21004 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@6003220a
+2025-10-17T12:52:49.104+02:00  INFO 21004 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T12:52:49.115+02:00  INFO 21004 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@8ac512e
+2025-10-17T14:46:01.678+02:00  INFO 13344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 13344 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:46:01.679+02:00  INFO 13344 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T14:46:02.803+02:00  INFO 13344 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T14:46:02.803+02:00  INFO 13344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T14:46:02.804+02:00  INFO 13344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T14:46:02.824+02:00  INFO 13344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 1.454 seconds (process running for 2.201)
+2025-10-17T14:46:02.948+02:00  INFO 13344 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@729cd862
+2025-10-17T14:46:03.016+02:00  INFO 13344 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T14:46:03.023+02:00  INFO 13344 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@29c1249a
+2025-10-17T14:46:10.949+02:00  INFO 11140 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 11140 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:46:10.950+02:00  INFO 11140 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T14:46:11.502+02:00  INFO 11140 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T14:46:11.502+02:00  INFO 11140 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T14:46:11.503+02:00  INFO 11140 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T14:46:11.522+02:00  INFO 11140 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 0.858 seconds (process running for 2.416)
+2025-10-17T14:46:11.572+02:00  INFO 11140 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T14:46:11.661+02:00  INFO 11140 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T14:46:11.667+02:00  INFO 11140 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T14:46:11.673+02:00  INFO 11140 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T14:46:11.681+02:00  INFO 11140 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T14:46:11.711+02:00  INFO 11140 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T14:46:11.718+02:00  INFO 11140 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T14:46:11.737+02:00  INFO 11140 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 11140 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:46:11.738+02:00  INFO 11140 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T14:46:11.866+02:00  INFO 11140 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T14:46:11.866+02:00  INFO 11140 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T14:46:11.867+02:00  INFO 11140 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T14:46:11.871+02:00  INFO 11140 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.151 seconds (process running for 2.765)
+2025-10-17T14:46:11.899+02:00  INFO 11140 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@1123d461
+2025-10-17T14:46:11.906+02:00  INFO 11140 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T14:46:11.911+02:00  INFO 11140 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@2a4cb8ae
+2025-10-17T14:53:37.923+02:00  INFO 18340 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 18340 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:53:37.925+02:00  INFO 18340 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T14:53:39.361+02:00  INFO 18340 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T14:53:39.362+02:00  INFO 18340 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T14:53:39.363+02:00  INFO 18340 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T14:53:39.388+02:00  INFO 18340 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.874 seconds (process running for 3.096)
+2025-10-17T14:53:39.482+02:00  INFO 18340 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T14:53:39.613+02:00  INFO 18340 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T14:53:39.623+02:00  INFO 18340 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T14:53:39.631+02:00  INFO 18340 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T14:53:39.642+02:00  INFO 18340 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T14:53:39.784+02:00  INFO 18340 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T14:53:39.798+02:00  INFO 18340 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T14:53:39.828+02:00  INFO 18340 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 18340 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:53:39.829+02:00  INFO 18340 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T14:53:40.027+02:00  INFO 18340 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T14:53:40.027+02:00  INFO 18340 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T14:53:40.028+02:00  INFO 18340 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T14:53:40.033+02:00  INFO 18340 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.231 seconds (process running for 3.742)
+2025-10-17T14:53:40.092+02:00  INFO 18340 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@3d5a6aca
+2025-10-17T14:53:40.100+02:00  INFO 18340 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T14:53:40.108+02:00  INFO 18340 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@102e9731
+2025-10-17T14:59:58.601+02:00  INFO 3516 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 3516 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T14:59:58.603+02:00  INFO 3516 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:00:00.070+02:00  INFO 3516 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:00:00.070+02:00  INFO 3516 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:00:00.071+02:00  INFO 3516 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:00:00.094+02:00  INFO 3516 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.911 seconds (process running for 3.099)
+2025-10-17T15:00:00.179+02:00  INFO 3516 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:00:00.324+02:00  INFO 3516 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:00:00.335+02:00  INFO 3516 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:00:00.342+02:00  INFO 3516 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:00:00.354+02:00  INFO 3516 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:00:00.502+02:00  INFO 3516 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:00:00.514+02:00  INFO 3516 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:00:00.545+02:00  INFO 3516 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 3516 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:00:00.545+02:00  INFO 3516 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:00:00.749+02:00  INFO 3516 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:00:00.750+02:00  INFO 3516 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:00:00.750+02:00  INFO 3516 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:00:00.756+02:00  INFO 3516 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.238 seconds (process running for 3.761)
+2025-10-17T15:00:00.815+02:00  INFO 3516 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@10ab3bc0
+2025-10-17T15:00:00.823+02:00  INFO 3516 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:00:00.830+02:00  INFO 3516 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@2b45ede
+2025-10-17T15:08:24.623+02:00  INFO 10400 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 10400 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:08:24.624+02:00  INFO 10400 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:08:25.717+02:00  INFO 10400 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:08:25.717+02:00  INFO 10400 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:08:25.718+02:00  INFO 10400 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:08:25.737+02:00  INFO 10400 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.421 seconds (process running for 2.168)
+2025-10-17T15:08:25.804+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:08:25.898+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:08:25.923+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:08:25.948+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:08:25.954+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:08:25.959+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:08:25.966+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:08:25.973+02:00  INFO 10400 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:08:38.829+02:00  INFO 17312 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 17312 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:08:38.830+02:00  INFO 17312 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:08:39.928+02:00  INFO 17312 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:08:39.929+02:00  INFO 17312 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:08:39.929+02:00  INFO 17312 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:08:39.949+02:00  INFO 17312 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.425 seconds (process running for 2.201)
+2025-10-17T15:13:22.059+02:00  INFO 1260 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 1260 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:13:22.060+02:00  INFO 1260 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:13:23.189+02:00  INFO 1260 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:13:23.190+02:00  INFO 1260 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:13:23.190+02:00  INFO 1260 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:13:23.211+02:00  INFO 1260 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.459 seconds (process running for 2.208)
+2025-10-17T15:13:23.280+02:00  INFO 1260 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:14:39.397+02:00  INFO 7032 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 7032 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:14:39.398+02:00  INFO 7032 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:14:40.029+02:00  INFO 7032 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:14:40.029+02:00  INFO 7032 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:14:40.030+02:00  INFO 7032 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:14:40.051+02:00  INFO 7032 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 0.958 seconds (process running for 2.75)
+2025-10-17T15:14:40.106+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:14:40.189+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:14:40.215+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:14:40.223+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:14:40.229+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:14:40.235+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:14:40.238+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:14:40.245+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:14:40.252+02:00  INFO 7032 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:14:40.283+02:00  INFO 7032 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:14:40.291+02:00  INFO 7032 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:14:40.315+02:00  INFO 7032 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 7032 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:14:40.315+02:00  INFO 7032 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:14:40.474+02:00  INFO 7032 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:14:40.474+02:00  INFO 7032 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:14:40.474+02:00  INFO 7032 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:14:40.477+02:00  INFO 7032 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.184 seconds (process running for 3.176)
+2025-10-17T15:14:40.508+02:00  INFO 7032 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@57f1a1de
+2025-10-17T15:14:40.515+02:00  INFO 7032 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:14:40.520+02:00  INFO 7032 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@56f61d74
+2025-10-17T15:14:59.949+02:00  INFO 19784 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 19784 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:14:59.950+02:00  INFO 19784 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:15:01.362+02:00  INFO 19784 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:15:01.362+02:00  INFO 19784 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:15:01.363+02:00  INFO 19784 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:15:01.387+02:00  INFO 19784 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.847 seconds (process running for 2.95)
+2025-10-17T15:15:01.479+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:15:01.603+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:15:01.639+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:15:01.648+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:15:01.655+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:15:01.660+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:15:01.665+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:15:01.673+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:15:01.680+02:00  INFO 19784 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:15:01.826+02:00  INFO 19784 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:15:01.838+02:00  INFO 19784 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:15:01.867+02:00  INFO 19784 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 19784 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:15:01.868+02:00  INFO 19784 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:15:02.056+02:00  INFO 19784 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:15:02.057+02:00  INFO 19784 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:15:02.057+02:00  INFO 19784 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:15:02.064+02:00  INFO 19784 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.223 seconds (process running for 3.627)
+2025-10-17T15:15:02.125+02:00  INFO 19784 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@12f12982
+2025-10-17T15:15:02.133+02:00  INFO 19784 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:15:02.142+02:00  INFO 19784 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@4d0042eb
+2025-10-17T15:21:14.539+02:00  INFO 8492 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 8492 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:21:14.540+02:00  INFO 8492 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:21:15.644+02:00  INFO 8492 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:21:15.644+02:00  INFO 8492 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:21:15.645+02:00  INFO 8492 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:21:15.664+02:00  INFO 8492 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 1.429 seconds (process running for 2.177)
+2025-10-17T15:21:15.782+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@61ab6521
+2025-10-17T15:21:15.849+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@74a85515
+2025-10-17T15:21:15.849+02:00 ERROR 8492 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-10-17T15:21:15.855+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@78288f83
+2025-10-17T15:21:15.856+02:00 ERROR 8492 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-10-17T15:21:15.864+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:21:15.870+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@2ad2b274
+2025-10-17T15:21:15.874+02:00  INFO 8492 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:21:15.874+02:00 ERROR 8492 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-10-17T15:21:23.232+02:00  INFO 17272 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 17272 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:21:23.233+02:00  INFO 17272 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:21:24.605+02:00  INFO 17272 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:21:24.605+02:00  INFO 17272 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:21:24.606+02:00  INFO 17272 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:21:24.627+02:00  INFO 17272 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.783 seconds (process running for 2.888)
+2025-10-17T15:21:24.722+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:21:24.839+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:21:24.871+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:21:24.879+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:21:24.886+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:21:24.892+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:21:24.896+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:21:24.905+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:21:24.912+02:00  INFO 17272 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:21:25.056+02:00  INFO 17272 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:21:25.070+02:00  INFO 17272 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:21:25.103+02:00  INFO 17272 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 17272 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:21:25.103+02:00  INFO 17272 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:21:25.295+02:00  INFO 17272 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:21:25.295+02:00  INFO 17272 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:21:25.296+02:00  INFO 17272 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:21:25.301+02:00  INFO 17272 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.228 seconds (process running for 3.563)
+2025-10-17T15:21:25.362+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@75e00044
+2025-10-17T15:21:25.371+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@70921720
+2025-10-17T15:21:25.372+02:00 ERROR 17272 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-10-17T15:21:25.378+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@1334a246
+2025-10-17T15:21:25.379+02:00 ERROR 17272 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-10-17T15:21:25.384+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:21:25.390+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@73f94f48
+2025-10-17T15:21:25.394+02:00  INFO 17272 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:21:25.394+02:00 ERROR 17272 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-10-17T15:25:42.307+02:00  INFO 21028 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 21028 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:25:42.309+02:00  INFO 21028 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:25:43.764+02:00  INFO 21028 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:25:43.764+02:00  INFO 21028 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:25:43.765+02:00  INFO 21028 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:25:43.787+02:00  INFO 21028 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.923 seconds (process running for 3.027)
+2025-10-17T15:25:43.877+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:25:43.993+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:25:44.026+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:25:44.035+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:25:44.042+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:25:44.047+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:25:44.052+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:25:44.061+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:25:44.068+02:00  INFO 21028 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:25:44.229+02:00  INFO 21028 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:25:44.241+02:00  INFO 21028 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:25:44.270+02:00  INFO 21028 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 21028 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:25:44.270+02:00  INFO 21028 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:25:44.462+02:00  INFO 21028 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:25:44.462+02:00  INFO 21028 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:25:44.462+02:00  INFO 21028 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:25:44.468+02:00  INFO 21028 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.224 seconds (process running for 3.708)
+2025-10-17T15:25:44.527+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@42c8f458
+2025-10-17T15:25:44.536+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@53a52b3f
+2025-10-17T15:25:44.537+02:00 ERROR 21028 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-10-17T15:25:44.544+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@40a2cae4
+2025-10-17T15:25:44.545+02:00 ERROR 21028 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-10-17T15:25:44.550+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:25:44.554+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@5dca1c50
+2025-10-17T15:25:44.559+02:00  INFO 21028 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:25:44.559+02:00 ERROR 21028 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-10-17T15:34:57.097+02:00  INFO 13688 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 13688 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:34:57.099+02:00  INFO 13688 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:34:58.544+02:00  INFO 13688 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:34:58.545+02:00  INFO 13688 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:34:58.546+02:00  INFO 13688 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-10-17T15:34:58.567+02:00  INFO 13688 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.879 seconds (process running for 3.029)
+2025-10-17T15:34:58.660+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-10-17T15:34:58.774+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-10-17T15:34:58.809+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-10-17T15:34:58.819+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-10-17T15:34:58.826+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-10-17T15:34:58.831+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-10-17T15:34:58.837+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-10-17T15:34:58.846+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-10-17T15:34:58.854+02:00  INFO 13688 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-10-17T15:34:59.015+02:00  INFO 13688 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-10-17T15:34:59.030+02:00  INFO 13688 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-10-17T15:34:59.060+02:00  INFO 13688 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 13688 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-10-17T15:34:59.060+02:00  INFO 13688 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T15:34:59.257+02:00  INFO 13688 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-10-17T15:34:59.258+02:00  INFO 13688 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-10-17T15:34:59.258+02:00  INFO 13688 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-10-17T15:34:59.265+02:00  INFO 13688 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.232 seconds (process running for 3.726)
+2025-10-17T15:34:59.327+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@321b2469
+2025-10-17T15:34:59.337+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@62f11904
+2025-10-17T15:34:59.338+02:00 ERROR 13688 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-10-17T15:34:59.345+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@301af154
+2025-10-17T15:34:59.345+02:00 ERROR 13688 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-10-17T15:34:59.351+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:34:59.356+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@1fe275d8
+2025-10-17T15:34:59.360+02:00  INFO 13688 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-10-17T15:34:59.361+02:00 ERROR 13688 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
