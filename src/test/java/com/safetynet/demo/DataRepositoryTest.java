@@ -1,7 +1,6 @@
 package com.safetynet.demo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.safetynet.demo.model.DataWrapper;
 import com.safetynet.demo.model.FireStation;
 import com.safetynet.demo.model.MedicalRecord;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -26,13 +24,8 @@ public class DataRepositoryTest {
 
     @BeforeEach
     void setup() {
-        // Spy du repo réel pour exécuter la logique réelle
         repo = Mockito.spy(new DataRepository());
-
-        //  Initialisation du wrapper interne pour éviter data == null
         ReflectionTestUtils.setField(repo, "data", new DataWrapper());
-
-        //  Pas d’Input/Output disque pendant les tests
         doNothing().when(repo).saveData();
     }
 
@@ -106,7 +99,7 @@ public class DataRepositoryTest {
     void saveData_writesPrettyJson_success() throws Exception {
         DataRepository repo = new DataRepository();
 
-        // fichier temporaire (sans @TempDir)
+        // fichier temporaire
         Path out = Files.createTempFile("datarepo-", ".json");
         out.toFile().deleteOnExit();
 
@@ -137,17 +130,17 @@ public class DataRepositoryTest {
     void saveData_throwsRuntime_whenTargetIsDirectory() throws Exception {
         DataRepository repo = new DataRepository();
 
-        // répertoire temporaire (pas de @TempDir)
+        // répertoire temporaire
         Path dir = Files.createTempDirectory("datarepo-dir-");
         dir.toFile().deleteOnExit();
 
         // dépendances internes
-        ReflectionTestUtils.setField(repo, "jsonPath", dir);             // <-- un dossier, pas un fichier
+        ReflectionTestUtils.setField(repo, "jsonPath", dir);
         ReflectionTestUtils.setField(repo, "mapper", new ObjectMapper());
         ReflectionTestUtils.setField(repo, "data", new DataWrapper());
 
         RuntimeException ex = assertThrows(RuntimeException.class, repo::saveData);
-        assertNotNull(ex.getCause()); // IOException attendue en cause
+        assertNotNull(ex.getCause());
     }
 
 }

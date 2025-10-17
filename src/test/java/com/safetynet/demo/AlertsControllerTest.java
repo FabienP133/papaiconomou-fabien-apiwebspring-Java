@@ -25,7 +25,7 @@ class AlertsControllerTest {
     @MockitoBean
     private SafetyNetService service;
 
-    // ---- /childAlert ----
+    // childAlert
     @Test
     void childAlert_returnsChildrenWithHousehold() throws Exception {
         var members = List.of(new ChildAlertHouseholdMemberDTO("Anna", "Smith"),
@@ -51,7 +51,7 @@ class AlertsControllerTest {
                 .andExpect(content().json("[]"));
     }
 
-    // ---- /fire ----
+    // fire
     @Test
     void fire_returnsStationAndPersons() throws Exception {
         var p1 = new FirePersonDTO("John", "Boyd", "841-874-6512", 41,
@@ -77,7 +77,7 @@ class AlertsControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    // ---- /flood/stations ----
+    // flood/stations
     @Test
     void floodStations_returnsHouseholdsList() throws Exception {
         var p1 = new FirePersonDTO("P1", "L1", "111", 20, List.of("m1"), List.of("a1"));
@@ -96,7 +96,7 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$.households[0].persons[0].firstName", anyOf(is("P1"), is("P2"))));
     }
 
-    // -------- stationCoverage --------
+    // stationCoverage
     @Test
     void stationCoverage_200() throws Exception {
         var persons = List.of(
@@ -114,7 +114,7 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$.persons[0].phone").value("111-111"));
     }
 
-    // -------- phoneAlert --------
+    // phoneAlert
     @Test
     void phoneAlert_200() throws Exception {
         when(service.getPhoneAlert(1))
@@ -125,7 +125,7 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$[0]").value("111-111"));
     }
 
-    // -------- communityEmail --------
+    // communityEmail
     @Test
     void communityEmail_200() throws Exception {
         when(service.getCommunityEmail("Culver"))
@@ -136,7 +136,7 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$[0]").value("a@x.com"));
     }
 
-    // -------- personInfoLastName --------
+    // personInfoLastName
     @Test
     void personInfoLastName_200() throws Exception {
         var list = List.of(
@@ -148,8 +148,8 @@ class AlertsControllerTest {
                         List.of("aznol:200mg"), List.of("nillacilan"))
         ));
 
-        mockMvc.perform(get("/personInfo")                 // ← au lieu de /personInfoLastName
-                        .param("lastName", "Boyd"))               // ← param s’appelle bien lastName
+        mockMvc.perform(get("/personInfo")
+                        .param("lastName", "Boyd"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].firstName").value("John"))
                 .andExpect(jsonPath("$[0].age").value(40))

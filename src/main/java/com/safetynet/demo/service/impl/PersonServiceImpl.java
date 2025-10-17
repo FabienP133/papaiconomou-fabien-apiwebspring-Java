@@ -3,9 +3,7 @@ package com.safetynet.demo.service.impl;
 import com.safetynet.demo.model.Person;
 import com.safetynet.demo.repository.DataRepository;
 import com.safetynet.demo.service.PersonService;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 

@@ -31,7 +31,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
         String stationStr = String.valueOf(stationNumber);
 
         return repository.getFirestations().stream()
-                .filter(fs -> stationStr.equals(fs.getStation()))   //  compare String à String
+                .filter(fs -> stationStr.equals(fs.getStation()))
                 .map(FireStation::getAddress)
                 .flatMap(addr -> repository.getPersons().stream()
                         .filter(p -> addr.equalsIgnoreCase(p.getAddress()))
@@ -65,9 +65,9 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                     .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                             && m.getLastName().equalsIgnoreCase(p.getLastName()))
                     .findFirst();
-            if (mrOpt.isEmpty()) continue; //  <-- skip si pas de MR
+            if (mrOpt.isEmpty()) continue;
 
-            MedicalRecord mr = mrOpt.get(); // <-- pas de map, plus clair
+            MedicalRecord mr = mrOpt.get();
             persons.add(toFirePersonDTO(p, mr));
         }
         return new FireResponseDTO(stationOpt.get(), persons);
@@ -84,7 +84,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                                     && m.getLastName().equalsIgnoreCase(p.getLastName()))
                             .findFirst();
 
-                    if (mrOpt.isEmpty()) {          // <-- garde la personne, mais sans map
+                    if (mrOpt.isEmpty()) {
                         return Stream.empty();
                     } else {
                         MedicalRecord mr = mrOpt.get();
@@ -115,7 +115,7 @@ public class SafetyNetServiceImpl implements SafetyNetService {
     public StationCoverageDTO getStationCoverage(int stationNumber) {
         String stationStr = Integer.toString(stationNumber);
 
-        // 1) adresses couvertes par la station
+        // adresses couvertes par la station
         var addresses = repository.getFirestations().stream()
                 .filter(fs -> stationStr.equals(fs.getStation()))
                 .map(FireStation::getAddress)
@@ -124,12 +124,12 @@ public class SafetyNetServiceImpl implements SafetyNetService {
         // station inconnue -> laisser le contrôleur renvoyer {}
         if (addresses.isEmpty()) return null;
 
-        // 2) personnes habitant ces adresses
+        // personnes habitant ces adresses
         var covered = repository.getPersons().stream()
                 .filter(p -> addresses.contains(p.getAddress()))
                 .toList();
 
-        // 3) construire la liste persons (DTO minimal) + compter enfants/adultes
+        // construire la liste persons (DTO minimal) + compter enfants/adultes
         var persons = new ArrayList<StationCoveragePersonDTO>(covered.size());
         int adults = 0;
         int children = 0;
@@ -202,10 +202,10 @@ public class SafetyNetServiceImpl implements SafetyNetService {
                         .filter(m -> m.getFirstName().equalsIgnoreCase(p.getFirstName())
                                 && m.getLastName().equalsIgnoreCase(p.getLastName()))
                         .findFirst();
-                if (mrOpt.isEmpty()) continue; //   skip si pas de MR
+                if (mrOpt.isEmpty()) continue;
 
-                MedicalRecord mr = mrOpt.get(); //  pas de map()
-                persons.add(toFirePersonDTO(p, mr)); //   réutilisation du helper
+                MedicalRecord mr = mrOpt.get();
+                persons.add(toFirePersonDTO(p, mr));
             }
             households.add(new FloodHouseholdDTO(addr, persons));
         }
