@@ -114,6 +114,14 @@ class AlertsControllerTest {
                 .andExpect(jsonPath("$.persons[0].phone").value("111-111"));
     }
 
+    @Test
+    void stationCoverage_notFound_404() throws Exception {
+        when(service.getStationCoverage(99)).thenReturn(null);
+
+        mockMvc.perform(get("/firestation").param("stationNumber", "99"))
+                .andExpect(status().isNotFound());
+    }
+
     // phoneAlert
     @Test
     void phoneAlert_200() throws Exception {

@@ -34,23 +34,25 @@ public class MedicalRecordController {
 
 
 
-    @PutMapping
-    public ResponseEntity<MedicalRecord> update(@RequestBody MedicalRecord mr) {
-        LOGGER.info("update appelé " + mr);
+    @PutMapping("/{lastName}/{firstName}")
+    public ResponseEntity<MedicalRecord> update(@PathVariable String lastName,
+                                                @PathVariable String firstName,
+                                                @RequestBody MedicalRecord mr) {
+        LOGGER.info("PUT /medicalRecord update lastName={} firstName={}", lastName, firstName);
         try {
-            MedicalRecord updated = service.update(mr);
-            return ResponseEntity.ok(updated);
+            mr.setLastName(lastName);
+            mr.setFirstName(firstName);
+            return ResponseEntity.ok(service.update(mr));
         } catch (com.safetynet.demo.exception.NotFoundException e) {
             LOGGER.error("Update medical record not found: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(
-            @RequestParam String firstName,
-            @RequestParam String lastName) {
-        LOGGER.info("DELETE /medicalRecord delete firstName={} lastName={}", firstName, lastName);
+    @DeleteMapping("/{lastName}/{firstName}")
+    public ResponseEntity<Void> delete(@PathVariable String lastName,
+                                       @PathVariable String firstName) {
+        LOGGER.info("DELETE /medicalRecord lastName={} firstName={}", lastName, firstName);
         try {
             service.delete(firstName, lastName);
             return ResponseEntity.noContent().build();

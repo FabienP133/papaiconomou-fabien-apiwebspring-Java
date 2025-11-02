@@ -21,7 +21,6 @@ public class FireStationController {
         this.fireStationService = fireStationService;
     }
 
-    //POST
 
     @PostMapping
     public ResponseEntity<FireStation> createFireStation(@RequestBody FireStation newFs) {
@@ -36,24 +35,25 @@ public class FireStationController {
     }
 
 
-     //PUT
 
-    @PutMapping
-    public ResponseEntity<?> updateFireStation(@RequestBody FireStation updatedFs) {
-        LOGGER.info("updateFireStation appelé " + updatedFs);
+    @PutMapping("/{address}/{station}")
+    public ResponseEntity<FireStation> updateFireStation(@PathVariable String address,
+                                                         @PathVariable int station,
+                                                         @RequestBody FireStation updatedFs) {
+        LOGGER.info("PUT /firestation update addr={} station={}", address, station);
         try {
-            FireStation updated = fireStationService.update(updatedFs);
-            return ResponseEntity.ok(updated);
+            updatedFs.setAddress(address);
+            updatedFs.setStation(String.valueOf(station));
+            return ResponseEntity.ok(fireStationService.update(updatedFs));
         } catch (com.safetynet.demo.exception.NotFoundException e) {
             LOGGER.error("Update firestation not found: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(
-            @RequestParam String address,
-            @RequestParam int station) {
+    @DeleteMapping("/{address}/{station}")
+    public ResponseEntity<Void> delete(@PathVariable String address,
+                                       @PathVariable int station) {
         LOGGER.info("DELETE /firestation addr={} station={}", address, station);
         try {
             fireStationService.delete(address, station);
@@ -63,4 +63,5 @@ public class FireStationController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
 }

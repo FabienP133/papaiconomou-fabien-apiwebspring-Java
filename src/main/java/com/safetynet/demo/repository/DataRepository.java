@@ -80,13 +80,12 @@ public class DataRepository {
 
 
     public boolean deleteFirestation(String address, Integer station) {
-        boolean removed = getFirestations().removeIf(
+        return getFirestations().removeIf(
                 fs -> {
-                    return fs.getAddress().equalsIgnoreCase(address) && fs.getStation().equalsIgnoreCase(station.toString());
+                    return fs.getAddress().equalsIgnoreCase(address) || fs.getStation().equalsIgnoreCase(station.toString());
                 }
 
         );
-        return removed;
     }
 
 

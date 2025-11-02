@@ -72,6 +72,18 @@ public class MedicalRecordServiceImplTest {
     }
 
     @Test
+    void update_notFound_throwsNotFoundException() {
+        when(repository.updateMedicalRecord(any(MedicalRecord.class))).thenReturn(null);
+
+        var mr = new MedicalRecord("Ghost", "User", "01/01/2000", List.of(), List.of());
+
+        assertThrows(com.safetynet.demo.exception.NotFoundException.class,
+                () -> service.update(mr));
+
+        verify(repository).updateMedicalRecord(mr);
+    }
+
+    @Test
     void create_duplicate_ignoreCase_conflict() {
         var existing = new MedicalRecord("JANE","DOE","02/02/1990", List.of(), List.of());
         when(repository.getMedicalRecords()).thenReturn(List.of(existing));
@@ -81,6 +93,7 @@ public class MedicalRecordServiceImplTest {
         assertThrows(com.safetynet.demo.exception.ConflictException.class,
                 () -> service.create(input));
 
+        verify(repository).getMedicalRecords();
         verify(repository, never()).addMedicalRecord(any());
     }
 
@@ -98,10 +111,14 @@ public class MedicalRecordServiceImplTest {
     }
 
 
+    @Test
+    void delete_notFound_throwsNotFoundException() {
+        when(repository.deleteMedicalRecord("No", "Body")).thenReturn(false);
 
+        assertThrows(com.safetynet.demo.exception.NotFoundException.class,
+                () -> service.delete("No", "Body"));
 
-
-
-
+        verify(repository).deleteMedicalRecord("No", "Body");
+    }
 
 }

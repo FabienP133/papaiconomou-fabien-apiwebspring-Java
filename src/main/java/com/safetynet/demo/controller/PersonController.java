@@ -33,10 +33,14 @@ public class PersonController {
     }
 
 
-    @PutMapping
-    public ResponseEntity<Person> update(@RequestBody Person p) {
-        LOGGER.info("update appelé " + p);
+    @PutMapping("/{lastName}/{firstName}")
+    public ResponseEntity<Person> update(@PathVariable String lastName,
+                                         @PathVariable String firstName,
+                                         @RequestBody Person p) {
+        LOGGER.info("PUT /person update lastName={} firstName={}", lastName, firstName);
         try {
+            p.setLastName(lastName);
+            p.setFirstName(firstName);
             return ResponseEntity.ok(service.update(p));
         } catch (com.safetynet.demo.exception.NotFoundException e) {
             LOGGER.error("Update person not found: {}", e.getMessage());
@@ -44,11 +48,10 @@ public class PersonController {
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(
-            @RequestParam String firstName,
-            @RequestParam String lastName) {
-        LOGGER.info("DELETE /person delete firstName={} lastName={}", firstName, lastName);
+    @DeleteMapping("/{lastName}/{firstName}")
+    public ResponseEntity<Void> delete(@PathVariable String lastName,
+                                       @PathVariable String firstName) {
+        LOGGER.info("DELETE /person lastName={} firstName={}", lastName, firstName);
         try {
             service.delete(firstName, lastName);
             return ResponseEntity.noContent().build();

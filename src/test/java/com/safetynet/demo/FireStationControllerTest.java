@@ -56,7 +56,7 @@ public class FireStationControllerTest {
         when(service.update(any(FireStation.class)))
                 .thenReturn(new FireStation("A1", "3"));
 
-        mockMvc.perform(put("/firestation")
+        mockMvc.perform(put("/firestation/A1/3")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"address\":\"A1\",\"station\":\"3\"}"))
                 .andExpect(status().isOk())
@@ -69,7 +69,7 @@ public class FireStationControllerTest {
         when(service.update(any(FireStation.class)))
                 .thenThrow(new com.safetynet.demo.exception.NotFoundException("missing"));
 
-        mockMvc.perform(put("/firestation")
+        mockMvc.perform(put("/firestation/A1/3")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"address\":\"A1\",\"station\":\"3\"}"))
                 .andExpect(status().isNotFound());
@@ -77,25 +77,19 @@ public class FireStationControllerTest {
 
     @Test
     void deleteFireStation_204() throws Exception {
-
-        doNothing().when(service).delete(eq("A1"), eq(3));
-
-        mockMvc.perform(delete("/firestation")
-                        .param("address", "A1")
-                        .param("station", "3"))
+        doNothing().when(service).delete("A1", 3);
+        mockMvc.perform(delete("/firestation/{address}/{station}", "A1", 3))
                 .andExpect(status().isNoContent());
+        org.mockito.Mockito.verify(service).delete("A1", 3);
     }
 
     @Test
     void deleteFireStation_notFound_404() throws Exception {
-        // delete(...) est void → utiliser doThrow
         org.mockito.Mockito.doThrow(new com.safetynet.demo.exception.NotFoundException("missing"))
-                .when(service).delete(eq("A1"), eq(3));
-
-        mockMvc.perform(delete("/firestation")
-                        .param("address", "A1")
-                        .param("station", "3"))
+                .when(service).delete("A1", 3);
+        mockMvc.perform(delete("/firestation/{address}/{station}", "A1", 3))
                 .andExpect(status().isNotFound());
+        org.mockito.Mockito.verify(service).delete("A1", 3);
     }
 
 

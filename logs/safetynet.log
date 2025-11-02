@@ -1,32 +1,210 @@
-2025-10-21T16:30:55.983+02:00  INFO 12196 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 12196 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
-2025-10-21T16:30:55.989+02:00  INFO 12196 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2025-10-21T16:30:57.590+02:00  INFO 12196 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-10-21T16:30:57.593+02:00  INFO 12196 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-10-21T16:30:57.593+02:00  INFO 12196 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-10-21T16:30:57.617+02:00  INFO 12196 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 2.113 seconds (process running for 3.571)
-2025-10-21T16:30:57.727+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
-2025-10-21T16:30:57.873+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
-2025-10-21T16:30:57.916+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
-2025-10-21T16:30:57.928+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
-2025-10-21T16:30:57.937+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
-2025-10-21T16:30:57.943+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
-2025-10-21T16:30:57.949+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
-2025-10-21T16:30:57.958+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
-2025-10-21T16:30:57.970+02:00  INFO 12196 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
-2025-10-21T16:30:58.174+02:00  INFO 12196 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-10-21T16:30:58.187+02:00  INFO 12196 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
-2025-10-21T16:30:58.219+02:00  INFO 12196 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 12196 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
-2025-10-21T16:30:58.219+02:00  INFO 12196 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
-2025-10-21T16:30:58.418+02:00  INFO 12196 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-10-21T16:30:58.418+02:00  INFO 12196 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-10-21T16:30:58.419+02:00  INFO 12196 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-10-21T16:30:58.423+02:00  INFO 12196 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.231 seconds (process running for 4.376)
-2025-10-21T16:30:58.488+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@2e5affb3
-2025-10-21T16:30:58.500+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@5acf07e7
-2025-10-21T16:30:58.500+02:00 ERROR 12196 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
-2025-10-21T16:30:58.506+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : updateFireStation appelé com.safetynet.demo.model.FireStation@6f798e5a
-2025-10-21T16:30:58.506+02:00 ERROR 12196 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
-2025-10-21T16:30:58.512+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
-2025-10-21T16:30:58.519+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@301af154
-2025-10-21T16:30:58.523+02:00  INFO 12196 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
-2025-10-21T16:30:58.523+02:00 ERROR 12196 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T19:28:49.680+01:00  INFO 14484 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 14484 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T19:28:49.687+01:00  INFO 14484 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T19:28:51.027+01:00  INFO 14484 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T19:28:51.027+01:00  INFO 14484 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T19:28:51.030+01:00  INFO 14484 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T19:28:51.051+01:00  INFO 14484 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 1.766 seconds (process running for 2.763)
+2025-11-02T19:28:51.189+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T19:28:51.269+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@731db93f
+2025-11-02T19:28:51.269+01:00 ERROR 14484 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T19:28:51.276+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T19:28:51.276+01:00 ERROR 14484 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T19:28:51.283+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T19:28:51.292+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@2e7bb00e
+2025-11-02T19:28:51.298+01:00  INFO 14484 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T19:28:51.298+01:00 ERROR 14484 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T19:30:33.845+01:00  INFO 2476 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 2476 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T19:30:33.848+01:00  INFO 2476 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T19:30:34.418+01:00  INFO 2476 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T19:30:34.418+01:00  INFO 2476 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T19:30:34.419+01:00  INFO 2476 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-02T19:30:34.438+01:00  INFO 2476 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 0.885 seconds (process running for 2.632)
+2025-11-02T19:30:34.490+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-11-02T19:30:34.571+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-11-02T19:30:34.599+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-11-02T19:30:34.606+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-11-02T19:30:34.612+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-11-02T19:30:34.618+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-11-02T19:30:34.622+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-11-02T19:30:34.630+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-11-02T19:30:34.637+01:00  INFO 2476 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-11-02T19:30:34.678+01:00  INFO 2476 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02T19:30:34.687+01:00  INFO 2476 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-11-02T19:30:34.710+01:00  INFO 2476 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 2476 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T19:30:34.710+01:00  INFO 2476 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T19:30:34.857+01:00  INFO 2476 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T19:30:34.857+01:00  INFO 2476 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T19:30:34.857+01:00  INFO 2476 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T19:30:34.860+01:00  INFO 2476 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.169 seconds (process running for 3.054)
+2025-11-02T19:30:34.891+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T19:30:34.899+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@38394dc3
+2025-11-02T19:30:34.899+01:00 ERROR 2476 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T19:30:34.903+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T19:30:34.903+01:00 ERROR 2476 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T19:30:34.906+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T19:30:34.912+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@378c48c1
+2025-11-02T19:30:34.915+01:00  INFO 2476 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T19:30:34.915+01:00 ERROR 2476 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T21:01:16.261+01:00  INFO 20816 --- [demo] [main] com.safetynet.demo.DemoApplication       : Starting DemoApplication using Java 23.0.2 with PID 20816 (C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet\target\classes started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:01:16.262+01:00  INFO 20816 --- [demo] [main] com.safetynet.demo.DemoApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:01:17.009+01:00  INFO 20816 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-02T21:01:17.020+01:00  INFO 20816 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-02T21:01:17.021+01:00  INFO 20816 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-11-02T21:01:17.070+01:00  INFO 20816 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-02T21:01:17.071+01:00  INFO 20816 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 767 ms
+2025-11-02T21:01:17.276+01:00  INFO 20816 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:01:17.503+01:00  INFO 20816 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-02T21:01:17.509+01:00  INFO 20816 --- [demo] [main] com.safetynet.demo.DemoApplication       : Started DemoApplication in 1.609 seconds (process running for 1.871)
+2025-11-02T21:01:27.098+01:00  INFO 20816 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-02T21:01:27.098+01:00  INFO 20816 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-02T21:01:27.099+01:00  INFO 20816 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-02T21:01:27.703+01:00  INFO 20816 --- [demo] [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 269 ms
+2025-11-02T21:03:40.997+01:00  INFO 2356 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 2356 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:03:40.999+01:00  INFO 2356 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:03:42.295+01:00  INFO 2356 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:03:42.507+01:00  INFO 2356 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:03:42.507+01:00  INFO 2356 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:03:42.508+01:00  INFO 2356 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-02T21:03:42.528+01:00  INFO 2356 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.945 seconds (process running for 3.201)
+2025-11-02T21:03:42.613+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-11-02T21:03:42.746+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-11-02T21:03:42.782+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-11-02T21:03:42.792+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-11-02T21:03:42.801+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-11-02T21:03:42.809+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-11-02T21:03:42.817+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-11-02T21:03:42.829+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-11-02T21:03:42.839+01:00  INFO 2356 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-11-02T21:03:43.005+01:00  INFO 2356 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02T21:03:43.023+01:00  INFO 2356 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-11-02T21:03:43.059+01:00  INFO 2356 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 2356 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:03:43.059+01:00  INFO 2356 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:03:43.216+01:00  INFO 2356 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:03:43.254+01:00  INFO 2356 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:03:43.254+01:00  INFO 2356 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:03:43.254+01:00  INFO 2356 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T21:03:43.260+01:00  INFO 2356 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.233 seconds (process running for 3.933)
+2025-11-02T21:03:43.321+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:03:43.333+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@6383ea52
+2025-11-02T21:03:43.333+01:00 ERROR 2356 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T21:03:43.339+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:03:43.339+01:00 ERROR 2356 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T21:03:43.344+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:03:43.357+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@62a153d3
+2025-11-02T21:03:43.362+01:00  INFO 2356 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:03:43.362+01:00 ERROR 2356 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T21:09:37.329+01:00  INFO 17764 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 17764 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:09:37.330+01:00  INFO 17764 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:09:38.301+01:00  INFO 17764 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:09:38.451+01:00  INFO 17764 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:09:38.451+01:00  INFO 17764 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:09:38.452+01:00  INFO 17764 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T21:09:38.474+01:00  INFO 17764 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.453 seconds (process running for 2.236)
+2025-11-02T21:09:38.552+01:00  INFO 17764 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 99
+2025-11-02T21:10:06.609+01:00  INFO 9344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 9344 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:10:06.611+01:00  INFO 9344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:10:07.865+01:00  INFO 9344 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:10:08.070+01:00  INFO 9344 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:10:08.071+01:00  INFO 9344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:10:08.072+01:00  INFO 9344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-02T21:10:08.091+01:00  INFO 9344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.899 seconds (process running for 3.026)
+2025-11-02T21:10:08.189+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-11-02T21:10:08.299+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-11-02T21:10:08.330+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-11-02T21:10:08.338+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-11-02T21:10:08.345+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-11-02T21:10:08.349+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-11-02T21:10:08.354+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-11-02T21:10:08.365+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-11-02T21:10:08.373+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-11-02T21:10:08.388+01:00  INFO 9344 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 99
+2025-11-02T21:10:08.544+01:00  INFO 9344 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02T21:10:08.556+01:00  INFO 9344 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-11-02T21:10:08.588+01:00  INFO 9344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 9344 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:10:08.588+01:00  INFO 9344 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:10:08.740+01:00  INFO 9344 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:10:08.778+01:00  INFO 9344 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:10:08.779+01:00  INFO 9344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:10:08.779+01:00  INFO 9344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T21:10:08.784+01:00  INFO 9344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.225 seconds (process running for 3.72)
+2025-11-02T21:10:08.840+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:10:08.851+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@3bbd9232
+2025-11-02T21:10:08.851+01:00 ERROR 9344 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T21:10:08.856+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:10:08.856+01:00 ERROR 9344 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T21:10:08.861+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:10:08.872+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@43ec41d7
+2025-11-02T21:10:08.876+01:00  INFO 9344 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:10:08.877+01:00 ERROR 9344 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T21:19:24.246+01:00  INFO 21472 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 21472 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:19:24.248+01:00  INFO 21472 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:19:25.526+01:00  INFO 21472 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:19:25.742+01:00  INFO 21472 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:19:25.742+01:00  INFO 21472 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:19:25.743+01:00  INFO 21472 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-02T21:19:25.764+01:00  INFO 21472 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.955 seconds (process running for 3.125)
+2025-11-02T21:19:25.849+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-11-02T21:19:25.970+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-11-02T21:19:26.003+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-11-02T21:19:26.012+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-11-02T21:19:26.019+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-11-02T21:19:26.024+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-11-02T21:19:26.029+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-11-02T21:19:26.037+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-11-02T21:19:26.044+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-11-02T21:19:26.059+01:00  INFO 21472 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 99
+2025-11-02T21:19:26.212+01:00  INFO 21472 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02T21:19:26.227+01:00  INFO 21472 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-11-02T21:19:26.262+01:00  INFO 21472 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 21472 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:19:26.262+01:00  INFO 21472 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:19:26.414+01:00  INFO 21472 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:19:26.453+01:00  INFO 21472 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:19:26.453+01:00  INFO 21472 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:19:26.453+01:00  INFO 21472 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T21:19:26.459+01:00  INFO 21472 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.229 seconds (process running for 3.82)
+2025-11-02T21:19:26.520+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:19:26.530+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@ed5cf29
+2025-11-02T21:19:26.531+01:00 ERROR 21472 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T21:19:26.536+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:19:26.536+01:00 ERROR 21472 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T21:19:26.541+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:19:26.553+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@5f2896fa
+2025-11-02T21:19:26.559+01:00  INFO 21472 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:19:26.559+01:00 ERROR 21472 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
+2025-11-02T21:19:31.776+01:00  INFO 20816 --- [demo] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-02T21:19:31.779+01:00  INFO 20816 --- [demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-02T21:20:02.207+01:00  INFO 12344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Starting AlertsControllerTest using Java 23.0.2 with PID 12344 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:20:02.208+01:00  INFO 12344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:20:03.494+01:00  INFO 12344 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:20:03.707+01:00  INFO 12344 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:20:03.707+01:00  INFO 12344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:20:03.708+01:00  INFO 12344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-02T21:20:03.727+01:00  INFO 12344 --- [demo] [main] c.safetynet.demo.AlertsControllerTest    : Started AlertsControllerTest in 1.933 seconds (process running for 3.055)
+2025-11-02T21:20:03.811+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : phoneAlert appelé 1
+2025-11-02T21:20:03.936+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : floodStations appelé [1, 2]
+2025-11-02T21:20:03.968+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé Unknown
+2025-11-02T21:20:03.977+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : personInfoLastName appelé Boyd
+2025-11-02T21:20:03.985+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : fire appelé 1509 Culver St
+2025-11-02T21:20:03.992+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : communityEmail appelé Culver
+2025-11-02T21:20:03.997+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 3
+2025-11-02T21:20:04.006+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A1
+2025-11-02T21:20:04.014+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : childAlert appelé A2
+2025-11-02T21:20:04.029+01:00  INFO 12344 --- [demo] [main] c.s.demo.controller.AlertsController     : stationCoverage appelé 99
+2025-11-02T21:20:04.185+01:00  INFO 12344 --- [demo] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.safetynet.demo.FireStationControllerTest]: FireStationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-02T21:20:04.198+01:00  INFO 12344 --- [demo] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.safetynet.demo.DemoApplication for test class com.safetynet.demo.FireStationControllerTest
+2025-11-02T21:20:04.229+01:00  INFO 12344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Starting FireStationControllerTest using Java 23.0.2 with PID 12344 (started by dudul in C:\Users\dudul\OneDrive\Bureau\Openclassroom\CinquiemeProjet\SafetyNet)
+2025-11-02T21:20:04.229+01:00  INFO 12344 --- [demo] [main] c.s.demo.FireStationControllerTest       : No active profile set, falling back to 1 default profile: "default"
+2025-11-02T21:20:04.388+01:00  INFO 12344 --- [demo] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-11-02T21:20:04.426+01:00  INFO 12344 --- [demo] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-02T21:20:04.426+01:00  INFO 12344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-02T21:20:04.427+01:00  INFO 12344 --- [demo] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-02T21:20:04.432+01:00  INFO 12344 --- [demo] [main] c.s.demo.FireStationControllerTest       : Started FireStationControllerTest in 0.23 seconds (process running for 3.762)
+2025-11-02T21:20:04.495+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:20:04.507+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@172e4d3a
+2025-11-02T21:20:04.508+01:00 ERROR 12344 --- [demo] [main] c.s.d.controller.FireStationController   : Create firestation conflict: dup
+2025-11-02T21:20:04.512+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : PUT /firestation update addr=A1 station=3
+2025-11-02T21:20:04.513+01:00 ERROR 12344 --- [demo] [main] c.s.d.controller.FireStationController   : Update firestation not found: missing
+2025-11-02T21:20:04.518+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:20:04.532+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : createFireStation appelé com.safetynet.demo.model.FireStation@38328799
+2025-11-02T21:20:04.536+01:00  INFO 12344 --- [demo] [main] c.s.d.controller.FireStationController   : DELETE /firestation addr=A1 station=3
+2025-11-02T21:20:04.537+01:00 ERROR 12344 --- [demo] [main] c.s.d.controller.FireStationController   : Delete firestation not found: missing
